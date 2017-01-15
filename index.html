@@ -1,0 +1,21 @@
+<script src="bower_components/knockout/build/output/knockout-latest.debug.js" type="text/javascript"></script>
+
+<h1>The Knockout Checkout</h1>
+
+<input type="text" name="name" data-bind="value: name">
+<input type="text" name="price" data-bind="value: price">
+<input type="text" name="quantity" data-bind="value: quantity">
+<button data-bind="click: addItem">Buy</button>
+
+<div data-bind="template: { name: 'itemsTemplate', foreach: lineItems }"></div>
+
+<script id="itemsTemplate" type="text/html">
+	<p data-bind="text: name"></p>
+	<p data-bind="text: price"></p>
+	<p data-bind="text: quantity"></p>
+	<button data-bind="click: removeItem">Remove</button>
+</script>
+
+<h1 data-bind="text: basketTotal"></h1>
+
+<script src="app.js" type="text/javascript"></script>
